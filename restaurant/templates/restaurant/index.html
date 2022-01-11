@@ -1,0 +1,502 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade pointer-event" data-bs-ride="carousel">
+      <ol class="carousel-indicators" id="hero-carousel-indicators">
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="0" class=""></li>
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="1" class=""></li>
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="2" class="active" aria-current="true"></li>
+      </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item" style="background: url(static/assets/img/slide/slide-1.jpg);">
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown"><span>Every Saturday</span>Rodizio</h2>
+            <p class="animate__animated animate__fadeInUp">You start with an extensive buffet that consists of a selection of marinated and grilled vegetables, special cheeses and a variety of other hot dishes. Our gauchos will bring you the best peace of meat by choice as much as you can eat!
+            We offer you a special prize! for only $35 per person(for kids under 12 years $25).</p>                
+            <div>
+              <a href="{% url 'menu:meals_list' %}" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+              <a href="#book" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background: url(static/assets/img/slide/slide-2.jpg);">
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown">Friday Night</h2>
+            <p class="animate__animated animate__fadeInUp">Every last Friday of the month our special house-dj will come and make a party! Everbody is welcome to our Brazilian night with nice cocktails!</p>
+            <div>
+              <a href="{% url 'menu:meals_list' %}" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+              <a href="#book" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item active" style="background: url(static/assets/img/slide/slide-3.jpg);">
+        <div class="carousel-background"><img src="static/assets/img/slide/slide-3.jpg" alt=""></div>
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown">Welcome at Charlie's Grillhouse</h2>
+            <p class="animate__animated animate__fadeInUp">We invite you to a wonderfully relaxing evening at Charlie's Grillhouse. Breathe in the vibrent scent of authentic Brazilian cuisine. Dressed as real gauchos, our waiters are on hand to serve you the most beautiful and best steaks in town.</p>
+            <div>
+              <a href="{% url 'menu:meals_list' %}" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+              <a href="#book" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+
+  </div>
+</div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-lg-5 align-items-stretch video-box" style="background-image: url(&quot;static/assets/img/about.jpg&quot);">
+            <a href="https://www.youtube.com/watch?v=aG_aDzlrOHM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+            <div class="content">
+              <h3>About <strong>Charlie's Grillhouse</strong></h3>
+              <p>
+                The dream of Charlie's Grillhouse was born on a amazing family trip in Brazil. We always had loved the Brazilian way of cooking. Three years later and a lot of tasting, we opened our doors in New York.
+              </p>
+              <p class="fst-italic">
+                
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i>At Charlie's you can eat the best steaks in town </li>
+                <li><i class="bx bx-check-double"></i>Every saturday we offer you an all-you-can-eat rodizio in an authentic Brazilian way </li>
+                <li><i class="bx bx-check-double"></i>We love to party with our house-dj every last friday of the month</li>
+              </ul>
+              <p>
+                So let's book a table, plan an event with us or just come to enjoy our restaurant and have a great evening. See you soon at Charlie's!
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+</section><!-- End About Section -->
+
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why choose <span>our Restaurant</span></h2>
+          <p>Charlie's Grillhouse is a friendly, informal and typical Brazilian grillhouse restaurant to come with your friends or with your family to have a great evening. Every saturday we have a rodizio (all-you-can-eat buffet) and all the other days you can choose from the menu. </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box">
+              <span>01</span>
+              <h4>Our Famous Rodizio</h4>
+              <p>Only on saturday you can come for our rodizio where you start with a buffet. You pay a fixed price and our gauchos will bring you the best peace of meat by choice.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <span>02</span>
+              <h4>Friendly Environment</h4>
+              <p>Our motto is to make the atmosphere friendly and as efficient as possible. The waiters are patiently and happily take your order and serve the meat with a nice smile.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <span>03</span>
+              <h4>Nice Drinks</h4>
+              <p>Fully licensed in-house beer is offered to boost up your dining experience. Or get the popular homemade drinks and soft drinks like guarana antartica or erva mate terere.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+</section><!-- End Why Us Section -->
+
+<!-- ======= Menu Section ======= -->
+<!-- End Menu Section -->
+
+<!-- ======= Specials Section ======= -->
+<!-- End Specials Section -->
+
+<!-- ======= Events Section ======= -->
+<!-- End Events Section -->
+
+<!-- ======= Book A Table Section ======= -->
+<section id="book" class="book-a-table">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Book a <span>Table</span></h2>
+      <p>To book a table online at Charlie's you need to login or register first. This gives you also the oppertunity to cancel your booking online in a fast why if you are somehow unable to show up. </p>
+    </div>
+    <div class="col-md-8 mt-3 offset-md-2" style="color:#444444">
+    <ul>
+      <li><a class="nav-link scrollto" style="color:#009c3b" href="{% url 'account_signup' %}">Register</a></li>          
+      <li><a class="nav-link scrollto" style="color:#009c3b" href="{% url 'account_login' %}">Login</a></li>
+    </ul> 
+    </div>    
+<!-- End Book A Table Section -->
+
+<!-- ======= Gallery Section ======= -->
+<section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div class="section-title">
+          <h2>Some Photos from <span>our Restaurant</span></h2>
+          <p>Here you see our gallery to give you an impression of Charlie's Grillhouse.</p>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+</section><br><!-- End Gallery Section -->
+
+<!-- ======= Chefs Section ======= -->
+<!-- End Chefs Section -->
+
+<!-- ======= Testimonials Section ======= -->
+<br>
+<section id="testimonials" class="testimonials">
+      <div class="container position-relative">
+
+        <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper" id="swiper-wrapper-38f7cc7f98341fc4" aria-live="off" style="transform: translate3d(-2107.2px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Orsini Maia</h3>
+                <h4>Customer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fantastic steaks and very friendly staff at Charlie's Grillhouse. I came with my wife for Movie &amp; Dinner night. We had a graet dinner and after we went to a nice movie. We loved it!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" role="group" aria-label="2 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Discovered Charlie's by accident</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  After a nice shopping day with my friend we were starving and wanted to eat a nice steak. We found Charlie's Grillhouse and it turned out we were there at the last friday of the month. After dinner we discovered the house-dj and it was a great unexpected party. Those are the best nights.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Fan of Rodizio</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ever since i went to Brazil for a holiday i discoverd rodizio. Especially the picanha meat is our favorite. Back in New York it turns out we can always go to rodizio at saturday.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Meatlover!</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I love meat and especially grilled steaks. Charlie's is the best in town! But there's also a great variaty for vegetarian's if you try the buffet!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Regular Guest</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Charlie's (as i call it) is a super relaxed and nice place to come to. Last month i had celebrated my 50th birthday there and it was a great party with great music and food. That is all you wish for right.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Orsini Maia</h3>
+                <h4>Customer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fantastic steaks and very friendly staff at Charlie's Grillhouse. I came with my wife for Movie &amp; Dinner night. We had a graet dinner and after we went to a nice movie. We loved it!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" role="group" aria-label="2 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Discovered Charlie's by accident</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  After a nice shopping day with my friend we were starving and wanted to eat a nice steak. We found Charlie's Grillhouse and it turned out we were there at the last friday of the month. After dinner we discovered the house-dj and it was a great unexpected party. Those are the best nights.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Fan of Rodizio</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ever since i went to Brazil for a holiday i discoverd rodizio. Especially the picanha meat is our favorite. Back in New York it turns out we can always go to rodizio at saturday.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Meatlover!</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I love meat and especially grilled steaks. Charlie's is the best in town! But there's also a great variaty for vegetarian's if you try the buffet!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Regular Guest</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Charlie's (as i call it) is a super relaxed and nice place to come to. Last month i had celebrated my 50th birthday there and it was a great party with great music and food. That is all you wish for right.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Orsini Maia</h3>
+                <h4>Customer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fantastic steaks and very friendly staff at Charlie's Grillhouse. I came with my wife for Movie &amp; Dinner night. We had a graet dinner and after we went to a nice movie. We loved it!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" role="group" aria-label="2 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Discovered Charlie's by accident</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  After a nice shopping day with my friend we were starving and wanted to eat a nice steak. We found Charlie's Grillhouse and it turned out we were there at the last friday of the month. After dinner we discovered the house-dj and it was a great unexpected party. Those are the best nights.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Fan of Rodizio</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ever since i went to Brazil for a holiday i discoverd rodizio. Especially the picanha meat is our favorite. Back in New York it turns out we can always go to rodizio at saturday.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Meatlover!</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I love meat and especially grilled steaks. Charlie's is the best in town! But there's also a great variaty for vegetarian's if you try the buffet!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 5">
+              <div class="testimonial-item">
+                <img src="static/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Regular Guest</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Charlie's (as i call it) is a super relaxed and nice place to come to. Last month i had celebrated my 50th birthday there and it was a great party with great music and food. That is all you wish for right.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div></div>
+          <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+      </div>
+</section><!-- End Testimonials Section -->
+
+<!-- ======= Contact Section ======= -->
+<!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
