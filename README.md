@@ -133,16 +133,16 @@ Browser compatibility was also tested using the Lambdatest App.
 * 
 
 ### Responsiveness / Mobile-Friendly
-The site's reponsiveness was continuously monitored during the development stage using Chromes *Dev Tools*. Further testing was done using [Lighthouse desktop](validation/lighthouse-desktop.png) and [Lighthouse mobile](validation/lighthouse-mobile.png) which allowed for testing on additional devices.
+The site's reponsiveness was continuously monitored during the development stage using Chromes *Dev Tools*. Further testing was done using [Lighthouse desktop]() and [Lighthouse mobile]() which allowed for testing on additional devices.
 
 ### W3C Validation
-The CSS file was checked using [W3C CSS Validation](validation/css3-msp4.png).
+The CSS file was checked using [W3C CSS Validation]().
 
 ### JavaScript Validation
-Main Javascript were checked using [JSHint](validation/jshint-msp4.png).
+Main Javascript were checked using [JSHint]().
 
 ### Python Validation
-All Python were checked using [PEP8](http://pep8online.com/).
+All Python were checked using [PEP8]().
 
 ### User Story Testing
 
