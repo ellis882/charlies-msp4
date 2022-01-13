@@ -26,6 +26,7 @@ urlpatterns = [
     path('chefs/', include("chefs.urls", namespace="chefs")),
     path('event_reservation_form/', include("events.urls",
                                             namespace="events")),
+    path('contact/', include("contact.urls", namespace="contact")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
