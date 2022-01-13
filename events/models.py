@@ -20,7 +20,6 @@ class Events(models.Model):
     number_of_persons = models.IntegerField()
     Date_of_event = models.DateField()
     message = models.TextField(max_length=1000)
-    image = models.ImageField(upload_to='event/')
 
     class Meta:
         verbose_name = 'events'

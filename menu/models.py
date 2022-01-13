@@ -13,7 +13,6 @@ class Menu(models.Model):
     category = models.ForeignKey('Category', on_delete=models.SET_NULL,
                                  null=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    image = models.ImageField(upload_to='list/')
     slug = models.SlugField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
