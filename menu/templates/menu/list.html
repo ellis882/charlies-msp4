@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<section id="menu" class="menu">
+    <div class="container">
+      <div class="section-title">
+        <h2>Check our <span>Menu</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+              
+          <ul id="menu-flters">           
+            {% for category in categories %}            
+            <li data-filter=".filter-{{ category }}" class="filter-active">{{ category }}</li>
+            {% endfor %}
+          </ul>
+          
+        </div>
+      </div> 
+        
+      <div class="row menu-container" style="position: relative; height: 675px;">
+        {% for meal in meals_list %}
+        <div class="col-lg-6 menu-item filter-{{ meal.category }}" style="position: absolute; left: 0px; top: 0px;">                              
+          <div class="menu-content">            
+            <a href="">{{ meal.meal }}</a><span>${{ meal.price }}</span>
+          </div>
+          <div class="menu-ingredients">
+            {{ meal.description }}
+          </div>
+          
+        </div>          
+        {% endfor %}
+      </div>
+        
+    </div>
+</section>
+
+<section id="specials" class="specials">
+  <div class="container">
+    <div class="section-title">
+      <h2>Check our <span>Specials</span></h2>
+      <p>Here you see our specials and famous by our customers. You should really try it!</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Our Picanha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Our Gamba's (5 pieces)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Our Tiramisu</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Picanha Steak</h3>
+                <p class="fst-italic">Picanha is our best meat and famous in Brazil!</p>                    
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="{% static 'assets/img/specials-1.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Charlie's Grillhouse Gamba's</h3>
+                <p class="fst-italic">You should really try these gamba's sometimes. You can have them with or without a little bit spicy.</p>                     
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="{% static 'assets/img/specials-2.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Tiramisu</h3>
+                <p class="fst-italic">Tiramisu made according to traditional Italian receipe and favorite dessert from our guests. </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="{% static 'assets/img/specials-3.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>             
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
