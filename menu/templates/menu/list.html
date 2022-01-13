@@ -46,12 +46,15 @@
       <h2>Check our <span>Specials</span></h2>
       <p>Here you see our specials and famous by our customers. You should really try it!</p>
     </div>
-    <div class="row">
+    <div class="row">             
       <div class="col-lg-3">
+        {% for one in specials %}
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Our Picanha</a>
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Our {{one.specialty}}</a>
           </li>
+        {% endfor %}
+        {% comment %}          
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Our Gamba's (5 pieces)</a>
           </li>
@@ -59,20 +62,25 @@
             <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Our Tiramisu</a>
           </li>
         </ul>
+        {% endcomment %}
       </div>
-      <div class="col-lg-9 mt-4 mt-lg-0">
-        <div class="tab-content">
+      
+      <div class="col-lg-9 mt-4 mt-lg-0">        
+        <div class="tab-content"> 
+        {% for one in specials %}                 
           <div class="tab-pane active show" id="tab-1">
-            <div class="row">
+            <div class="row">                        
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>Picanha Steak</h3>
-                <p class="fst-italic">Picanha is our best meat and famous in Brazil!</p>                    
+                <h3>{{one.specialty}}</h3>
+                <p class="fst-italic">{{one.description}}</p>                    
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
-                <img src="{% static 'assets/img/specials-1.jpg' %}" alt="" class="img-fluid">
-              </div>
-            </div>
+                <img src="{{one.image.url}}" alt="" class="img-fluid">
+              </div>                          
+            </div>        
           </div>
+        {% endfor %}    
+          {% comment %}
           <div class="tab-pane" id="tab-2">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
@@ -94,10 +102,12 @@
                 <img src="{% static 'assets/img/specials-3.jpg' %}" alt="" class="img-fluid">
               </div>
             </div>
-          </div>             
+          </div>
+          {% endcomment %}           
         </div>
       </div>
     </div>
+    
   </div>
 </section>
 

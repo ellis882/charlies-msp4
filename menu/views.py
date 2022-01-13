@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Menu, Category
+from .models import Menu, Category, Specials
 
 
 def meals_list(request):
@@ -10,10 +10,12 @@ def meals_list(request):
     """
     meals_list = Menu.objects.all()
     categories = Category.objects.all()
+    specials = Specials.objects.all()
 
     context = {
         'meals_list': meals_list,
         'categories': categories,
+        'specials': specials
     }
 
     return render(request, 'menu/list.html', context)

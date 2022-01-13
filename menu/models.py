@@ -42,3 +42,20 @@ class Category(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+class Specials(models.Model):
+    """
+    to show images of the specials
+    for the menu page
+    """
+    specialty = models.CharField(max_length=50, default='')
+    description = models.TextField(max_length=500, default='')
+    image = models.ImageField(upload_to='list/')
+
+    class Meta:
+        verbose_name = 'specials'
+        verbose_name_plural = 'specials'
+
+    def __str__(self):
+        return str(self.specialty)
