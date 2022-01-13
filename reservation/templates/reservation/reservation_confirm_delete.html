@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
+
+    <div class="section-title">
+      <form id="reservation-form" method="POST">
+        {% csrf_token %}
+        <h3>Are you sure you wanne cancel this booking?:</h3>
+        <h4>Table Size:{{ reservation.table.table_size}}, Date:{{ reservation.date}}, Time:{{ reservation.time_start}} until {{ reservation.time_end}}. </h4>
+        <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Cancel</button></div>
+
+      </form> 
+      
+      
+      
+    </div>      
+      
+  </div>
+</section>
+{% endblock content %}   

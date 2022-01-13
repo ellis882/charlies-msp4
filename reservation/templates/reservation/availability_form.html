@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Welcome at Book a Table <span>Dear {{user}}</span></h2>
+      <p>To book your table online you can fill in the form below and submit. Charlie's is open every Mon-Sat from 17:00 am - 23:00 pm!</p>
+      <p>To cancel your booking press this link: <a href="{% url 'reservation:ReservationList' %}">Cancel Booking</a></p>
+    </div> 
+    
+    
+
+    <form action="" method="POST" >     
+        {% csrf_token %}
+      <div class="row">     
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_email">Email:</label> 
+          <input type="email" name="email" class="form-control" id="id_email" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_phone">Phone:</label> 
+          <input type="number" name="phone" class="form-control" id="id_phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <label for="id_table_size">Table Size:</label>            
+            <select class="form-control" name="table_size" id="id_table_size" placeholder="" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+            <option value selected>----</option>
+            <option value="two persons">TWO PERSONS</option>
+            <option value="four persons">FOUR PERSONS</option>
+            <option value="six persons">SIX PERSONS</option>
+            <option value="eight persons">EIGHT PERSONS</option>
+            </select>
+            <div class="validate"></div>
+          </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_date">Date:</label> 
+          <input type="date" name="date" class="form-control" id="id_date" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_time_start">Time start:</label>
+          <input type="time" class="form-control" name="time_start" id="id_time_start" min="17:00" max="21:30" required  data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <small>Booking hours are from 1700am to 2130pm</small>
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <label for="id_time_end">Time end:</label>
+            <input type="time" class="form-control" name="time_end" id="id_time_end" min="18:00" max="23:00" required data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <small>Booking hours are from 1800am until 2300pm</small>
+            <div class="validate"></div>
+          </div>
+        
+      </div>
+      
+      <br>
+      <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+    </form> 
+    
+    
+    {% comment %}
+    <form action="" method="POST">
+      {% csrf_token %}    
+      {{form.as_p}}
+      {% buttons %}
+      <br>
+      <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+      {% endbuttons %}
+    </form>  
+    {% endcomment %} 
+      
+    
+  </div>
+</section>
+
+{% endblock content %}

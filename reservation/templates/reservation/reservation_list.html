@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>This is your booking(s) <span>Dear {{ user }}</span></h2>
+      <p>To cancel your booking press the cancellation button!</p>
+    </div>
+    
+    <div class="row" class="reservation">
+        {% for reservation in reservation_list %}        
+        
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <h3>Email:{{ reservation.email}}</h3> 
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <h3>Phone:{{ reservation.phone}}</h3> 
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <h3>Table Size:{{ reservation.table.table_size}}</h3>            
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <h3>Date:{{ reservation.date}}</h3> 
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <h3>Time start:{{ reservation.time_start}}</h3>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <h3>Time end:{{ reservation.time_end}}</h3>
+        </div>         
+        <br>
+        <div class="text-center"><a href="{{reservation.cancel_reservation_url}}"><button class="book-a-table-btn scrollto" type="submit">Cancel Booking</button></a></div>
+        {% endfor %}
+    </div> 
+  </div>
+</section>
+
+{% endblock content %}
