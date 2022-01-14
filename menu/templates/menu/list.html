@@ -46,41 +46,44 @@
       <h2>Check our <span>Specials</span></h2>
       <p>Here you see our specials and famous by our customers. You should really try it!</p>
     </div>
-    <div class="row">             
-      <div class="col-lg-3">
-        {% for one in specials %}
+    <div class="row">   
+      <div class="col-lg-3">      
         <ul class="nav nav-tabs flex-column">
+        {% for special in specials %}
           <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Our {{one.specialty}}</a>
+            <a class="nav-link {% if forloop.first %} active show {% endif %}" data-bs-toggle="tab" href="#tab-{{forloop.counter}}">Our {{ special.specialty }}</a>
           </li>
         {% endfor %}
-        {% comment %}          
+          {% comment %}                 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Our Gamba's (5 pieces)</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Our Tiramisu</a>
           </li>
-        </ul>
-        {% endcomment %}
+          {% endcomment %}
+        </ul>        
       </div>
       
       <div class="col-lg-9 mt-4 mt-lg-0">        
         <div class="tab-content"> 
-        {% for one in specials %}                 
-          <div class="tab-pane active show" id="tab-1">
+        {% for special in specials %}
+                          
+          <div class="tab-pane {% if forloop.first %} active show{% endif %} " id="tab-{{forloop.counter}}">
             <div class="row">                        
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>{{one.specialty}}</h3>
-                <p class="fst-italic">{{one.description}}</p>                    
+                <h3>{{special.specialty}}</h3>
+                <p class="fst-italic">{{special.description}}</p>                    
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
-                <img src="{{one.image.url}}" alt="" class="img-fluid">
+                <img src="{{special.image.url}}" alt="" class="img-fluid">
               </div>                          
             </div>        
           </div>
-        {% endfor %}    
-          {% comment %}
+        {% endfor %}
+            
+      
+        {% comment %}
           <div class="tab-pane" id="tab-2">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
