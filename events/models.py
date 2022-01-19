@@ -27,3 +27,15 @@ class Events(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class EventImage(models.Model):
+    event_type = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='event/')
+
+    class Meta:
+        verbose_name = 'event_image'
+        verbose_name_plural = 'event_image'
+
+    def __str__(self):
+        return str(self.event_type)
