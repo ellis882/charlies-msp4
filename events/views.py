@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import EventForm
+from .models import EventImage
 
 
 def event_reservation_form(request):
@@ -26,3 +27,13 @@ def event_reservation_form(request):
 
 def send_success(request):
     return HttpResponse('Thanks for your email we will contact you soon!')
+
+
+def event_images(request):
+    event_image = EventImage.objects.all()
+
+    context = {
+        'event_image': event_image
+    }
+
+    return render(request, 'events/event.html', context)
