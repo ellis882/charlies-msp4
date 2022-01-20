@@ -25,7 +25,7 @@ urlpatterns = [
     path('menu/', include("menu.urls", namespace="menu")),
     path('chefs/', include("chefs.urls", namespace="chefs")),
     path('event_reservation_form/', include("events.urls",
-                                            namespace="events")),
+                                            namespace="events")),                                        
     path('contact/', include("contact.urls", namespace="contact")),
     path('', include("reservation.urls", namespace="reservation")),
 ]

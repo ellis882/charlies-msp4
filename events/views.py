@@ -30,7 +30,7 @@ def send_success(request):
 
 
 def event_images(request):
-    event_image = EventImage.objects.all()
+    event_image = list(EventImage.objects.all())
 
     context = {
         'event_image': event_image
