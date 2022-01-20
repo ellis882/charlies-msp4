@@ -12,6 +12,7 @@ def event_reservation_form(request):
     restaurant manager can contact the user.
     """
     event_form = EventForm()
+    event_image = list(EventImage.objects.all())
 
     if request.method == 'POST':
         event_form = EventForm(request.POST)
@@ -20,20 +21,13 @@ def event_reservation_form(request):
             event_form.save()
             return redirect('events:send_success')
 
-    context = {'form': event_form}
+    context = {
+        'form': event_form,
+        'event_image': event_image,
+    }
 
     return render(request, 'events/event.html', context)
 
 
 def send_success(request):
     return HttpResponse('Thanks for your email we will contact you soon!')
-
-
-def event_images(request):
-    event_image = list(EventImage.objects.all())
-
-    context = {
-        'event_image': event_image
-    }
-
-    return render(request, 'events/event.html', context)
